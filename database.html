@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head include-html="html/head.html">
+    <meta charset="utf-8">
+    <title>Th_ api - Database</title>
+</head>
+<body class="bg-light">
+<header class="bg-primary">
+    <div include-html="html/navbar.html" class="container"></div>
+</header>
+<main>
+    <div class="container">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-country-tab" data-bs-toggle="tab" data-bs-target="#nav-country"
+                        type="button" role="tab" aria-controls="nav-country" aria-selected="true">Country
+                </button>
+                <button class="nav-link" id="nav-color-tab" data-bs-toggle="tab" data-bs-target="#nav-color"
+                        type="button" role="tab" aria-controls="nav-color" aria-selected="false">Color
+                </button>
+                <button class="nav-link" id="nav-engine-tab" data-bs-toggle="tab" data-bs-target="#nav-engine"
+                        type="button" role="tab" aria-controls="nav-engine" aria-selected="false">Engine
+                </button>
+                <button class="nav-link" id="nav-transmission-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-transmission"
+                        type="button" role="tab" aria-controls="nav-transmission" aria-selected="false">Transmission
+                </button>
+                <button class="nav-link" id="nav-drive-train-tab" data-bs-toggle="tab" data-bs-target="#nav-drive-train"
+                        type="button" role="tab" aria-controls="nav-drive-train" aria-selected="false">Drive Train
+                </button>
+                <button class="nav-link" id="nav-brand-tab" data-bs-toggle="tab" data-bs-target="#nav-brand"
+                        type="button" role="tab" aria-controls="nav-brand" aria-selected="false">Brand
+                </button>
+                <button class="nav-link" id="nav-model-tab" data-bs-toggle="tab" data-bs-target="#nav-model"
+                        type="button" role="tab" aria-controls="nav-model" aria-selected="false">Model
+                </button>
+                <button class="nav-link" id="nav-trim-tab" data-bs-toggle="tab" data-bs-target="#nav-trim"
+                        type="button" role="tab" aria-controls="nav-trim" aria-selected="false">Trim
+                </button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <!--      Country      -->
+            <div class="tab-pane fade show active" id="nav-country" role="tabpanel" aria-labelledby="nav-country-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#countryModal"">
+                        <i class="fas fa-plus me-2"></i>Add Country
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="countryBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Color      -->
+            <div class="tab-pane fade" id="nav-color" role="tabpanel" aria-labelledby="nav-color-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#colorModal">
+                        <i class="fas fa-plus me-2"></i>Add Color
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Code</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="colorBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Engine      -->
+            <div class="tab-pane fade" id="nav-engine" role="tabpanel" aria-labelledby="nav-engine-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#engineModal">
+                        <i class="fas fa-plus me-2"></i>Add Engine
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Displacement</th>
+                        <th scope="col">Cylinder Count</th>
+                        <th scope="col">Voltage</th>
+                        <th scope="col">Energy Consumptions</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="engineBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Transmission      -->
+            <div class="tab-pane fade" id="nav-transmission" role="tabpanel" aria-labelledby="nav-transmission-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#transmissionModal">
+                        <i class="fas fa-plus me-2"></i>Add Transmission
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gears</th>
+                        <th scope="col">Automatic</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="transmissionBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Drive Train      -->
+            <div class="tab-pane fade" id="nav-drive-train" role="tabpanel" aria-labelledby="nav-drive-train-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#driveTrainModal">
+                        <i class="fas fa-plus me-2"></i>Add Drive Train
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Type</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="driveTrainBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Brand      -->
+            <div class="tab-pane fade" id="nav-brand" role="tabpanel" aria-labelledby="nav-brand-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#brandModal">
+                        <i class="fas fa-plus me-2"></i>Add Brand
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="brandBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Model      -->
+            <div class="tab-pane fade" id="nav-model" role="tabpanel" aria-labelledby="nav-model-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelModal">
+                        <i class="fas fa-plus me-2"></i>Add Model
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Seats</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Colors</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="modelBody">
+                    </tbody>
+                </table>
+            </div>
+            <!--      Trim      -->
+            <div class="tab-pane fade" id="nav-trim" role="tabpanel" aria-labelledby="nav-trim-tab">
+                <div class="d-flex justify-content-end py-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trimModal">
+                        <i class="fas fa-plus me-2"></i>Add Trim
+                    </button>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center fit">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Fuel Cons.</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Engine</th>
+                        <th scope="col">Drive Train</th>
+                        <th scope="col">Transmission</th>
+                        <th scope="col">Forced Induction</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="text-center fit">Edit</th>
+                        <th scope="col" class="text-center fit">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="trimBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+<footer class="bg-primary">
+    <div include-html="html/footer.html" class="container"></div>
+</footer>
+
+<!-- Country Modal -->
+<div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="countryModalLabel">Add Country</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addCountry();" id="countryAddForm">
+                    <div class="mb-3 row">
+                        <label for="countryName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="countryName">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Color Modal -->
+<div class="modal fade" id="colorModal" tabindex="-1" aria-labelledby="colorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="colorModalLabel">Add Color</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addColor();" id="colorAddForm">
+                    <div class="mb-3 row">
+                        <label for="colorName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="colorName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="colorCode" class="col-sm-2 col-form-label">Code</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="colorCode">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Engine Modal -->
+<div class="modal fade" id="engineModal" tabindex="-1" aria-labelledby="engineModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="engineModalLabel">Add Engine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addEngine();" id="engineAddForm">
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineType" class="col-sm-3 col-form-label">Type</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Select type of engine" id="engineType">
+                                <option selected>Select</option>
+                                <option value="0">Internal Combustion</option>
+                                <option value="1">Electric</option>
+                                <option value="2">Hybrid</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineDisplacement" class="col-sm-3 col-form-label">Displacement</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="engineDisplacement">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineCylinderCount" class="col-sm-3 col-form-label">Cylinder Count</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="engineCylinderCount">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineVoltage" class="col-sm-3 col-form-label">Voltage</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="engineVoltage">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineEnergyConsumption" class="col-sm-3 col-form-label">Energy Consumption</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="engineEnergyConsumption">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="engineDescription" class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea  class="w-100" id="engineDescription" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Transmission Modal -->
+<div class="modal fade" id="transmissionModal" tabindex="-1" aria-labelledby="transmissionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="transmissionModalLabel">Add Transmission</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addTransmission();" id="transmissionAddForm">
+                    <div class="mb-3 row align-items-center">
+                        <label for="transmissionName" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="transmissionName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="transmissionGears" class="col-sm-3 col-form-label">Gears</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="transmissionGears">
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="transmissionAutomatic">
+                        <label class="form-check-label" for="transmissionAutomatic">Automatic</label>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Drive Train Modal -->
+<div class="modal fade" id="driveTrainModal" tabindex="-1" aria-labelledby="driveTrainModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="driveTrainModalLabel">Add Drive Train</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addDriveTrain();" id="driveTrainAddForm">
+                    <div class="mb-3 row">
+                        <label for="driveTrainType" class="col-sm-2 col-form-label">Type</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="driveTrainType" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brand Modal -->
+<div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="brandModalLabel">Add Brand</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addBrand();" id="brandAddForm">
+                    <div class="mb-3 row">
+                        <label for="brandName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="brandName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="brandCountry" class="col-sm-2 col-form-label">Country</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="Select country of brand" id="brandCountry">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Model Modal -->
+<div class="modal fade" id="modelModal" tabindex="-1" aria-labelledby="modelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="modelModalLabel">Add Model</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addModel();" id="modelAddForm">
+                    <div class="mb-3 row">
+                        <label for="brandName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="modelName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="modelYear" class="col-sm-2 col-form-label">Year</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="modelYear" min="1900" max="2050" step="1">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="modelSeats" class="col-sm-2 col-form-label">Seats</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="modelSeats" min="1" max="20" step="1">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="modelBrand" class="col-sm-2 col-form-label">Brand</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="Select brand of model" id="modelBrand">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="modelBrand" class="col-sm-2 col-form-label">Colors</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="Select brand of model" id="modelColors" multiple>
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="modelDescription" class="col-sm-2 col-form-label">About</label>
+                        <div class="col-sm-10">
+                            <textarea class="w-100" id="modelDescription" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trim Modal -->
+<div class="modal fade" id="trimModal" tabindex="-1" aria-labelledby="trimModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-2">
+                <h5 class="modal-title" id="trimModalLabel">Add Trim</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="addTrim();" id="trimAddForm">
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimEngine" class="col-sm-3 col-form-label">Engine</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Select engine" id="trimModel">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimName" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="trimName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimFuelConsumption" class="col-sm-3 col-form-label">Fuel Consumption</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="trimFuelConsumption">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimEngine" class="col-sm-3 col-form-label">Engine</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Select engine" id="trimEngine">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimDriveTrain" class="col-sm-3 col-form-label">Drive Train</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Select drive train" id="trimDriveTrain">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimTransmission" class="col-sm-3 col-form-label">Transmission</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Select transmission" id="trimTransmission">
+                                <option selected disabled hidden>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimFuelConsumption" class="col-sm-3 col-form-label">Forced Induction</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="trimForcedInduction">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-items-center">
+                        <label for="trimDescription" class="col-sm-3 col-form-label">About</label>
+                        <div class="col-sm-9">
+                            <textarea class="w-100" id="trimDescription" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary text-center" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="js/include.js"></script>
+<script src="js/data.js"></script>
+<script> includeHTML();</script>
+</body>
+</html>
